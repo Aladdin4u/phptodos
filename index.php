@@ -1,11 +1,19 @@
 <?php
     include("conn.php");
-    // if(isset($_POST['task'])) {
-    //     if(!empty($_POST['task'])) {
-    //         $task = $_POST['task'];
-    //         echo $task. "<br>";
-    //     }
-    // }
+    if(isset($_POST['task'])) {
+        if(!empty($_POST['task'])) {
+            $task = $_POST['task'];
+            $sql  = "INSERT INTO `todos` (`id`, `task`, `completed`) VALUE (NULL, '$task', '0')";
+            $query_run = mysqli_query($conn, $sql);
+            if($query_run) {
+                echo "<script>alert('task added succesfully');</script>";
+            } else {
+                echo "<script>alert('Something Went Wrong. Please try again.');</script>";
+            }
+        } else  {
+            echo "please enter a valid string";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +40,7 @@
         ?>
             <div class="content">
                 <p><?php echo $row['task'] ?></p>
+                <p><?php echo $row['id'] ?></p>
                 <div class="box-btn">
                     <span class="btn-edit">Edit</span>
                     <span class="btn-trash">delete</span>
