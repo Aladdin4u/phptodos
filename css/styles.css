@@ -1,19 +1,24 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0 auto;
+    margin: 0;
 }
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     max-width: 600px;
+    margin: 10px auto;
 }
 header{
+    margin-top: 20px;
     padding: 15px;
     background-color: gray;
+    color: white;
     width: 100%;
+    text-align: center;
 }
 input {
     padding: 5px 3px;
@@ -40,10 +45,13 @@ div > .content {
     margin: 10px 0;
 }
 .content {
-    width: 100%;
+    border-left: 4px solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.content p {
+    margin-left: 10px;
 }
 .box-btn {
     display: flex;
