@@ -45,7 +45,6 @@ div > .content {
     margin: 10px 0;
 }
 .content {
-    border-left: 4px solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;
